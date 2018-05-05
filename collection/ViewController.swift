@@ -25,6 +25,7 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width:view.frame.width,height:200)
@@ -57,13 +58,15 @@ class VideoCell: UICollectionViewCell {
     let VideoImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.blue
-//        imageView.image = UIImage(named: "??")
+        imageView.image = UIImage(named: "images")
+        
         return imageView
     }()
     
     let ProfileImage : UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.green
+        imageView.image = UIImage(named: "logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
