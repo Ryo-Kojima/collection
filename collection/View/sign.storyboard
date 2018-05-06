@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FOG-yl-mjO">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SinhalaSangamMN.ttc">
+            <string>SinhalaSangamMN</string>
+        </array>
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="RCN-6u-9Wd">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="FOG-yl-mjO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3U-Zw-smo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="-109"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wUY-aG-eeb">
+            <objects>
+                <viewController id="QR7-RS-rNR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hCM-6K-MhP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVf-SI-WAA">
+                                <rect key="frame" x="16" y="353" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会員登録してコンテンツを閲覧できます。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHB-VP-3Gu">
+                                <rect key="frame" x="16" y="67" width="288" height="18"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VHB-VP-3Gu" firstAttribute="top" secondItem="Qeb-ga-Gw4" secondAttribute="top" constant="47" id="Dvx-mq-01g"/>
+                            <constraint firstItem="VHB-VP-3Gu" firstAttribute="leading" secondItem="Qeb-ga-Gw4" secondAttribute="leading" constant="16" id="FoC-a4-E3m"/>
+                            <constraint firstItem="QVf-SI-WAA" firstAttribute="leading" secondItem="Qeb-ga-Gw4" secondAttribute="leading" constant="16" id="bwZ-FV-8Ho"/>
+                            <constraint firstItem="Qeb-ga-Gw4" firstAttribute="bottom" secondItem="QVf-SI-WAA" secondAttribute="bottom" constant="89" id="dHE-8t-zoY"/>
+                            <constraint firstItem="Qeb-ga-Gw4" firstAttribute="trailing" secondItem="QVf-SI-WAA" secondAttribute="trailing" constant="16" id="fjA-x8-oSm"/>
+                            <constraint firstItem="Qeb-ga-Gw4" firstAttribute="trailing" secondItem="VHB-VP-3Gu" secondAttribute="trailing" constant="16" id="zEo-lv-k25"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qeb-ga-Gw4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDE-MF-Exo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611.25" y="-110"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Xp-52-6AA">
+            <objects>
+                <viewController id="qY5-kZ-IQF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0HZ-6L-y5F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oki-I0-MFf">
+                                <rect key="frame" x="16" y="353" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自身で作成したコンテンツを投稿できます。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCz-Oe-ywm">
+                                <rect key="frame" x="16" y="67" width="288" height="18"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H7d-5K-FVe" firstAttribute="trailing" secondItem="oki-I0-MFf" secondAttribute="trailing" constant="16" id="5Dn-rb-ezV"/>
+                            <constraint firstItem="H7d-5K-FVe" firstAttribute="bottom" secondItem="oki-I0-MFf" secondAttribute="bottom" constant="89" id="FBq-AP-Nzi"/>
+                            <constraint firstItem="hCz-Oe-ywm" firstAttribute="leading" secondItem="H7d-5K-FVe" secondAttribute="leading" constant="16" id="HyC-G2-aYB"/>
+                            <constraint firstItem="oki-I0-MFf" firstAttribute="leading" secondItem="H7d-5K-FVe" secondAttribute="leading" constant="16" id="g4R-ZT-eJQ"/>
+                            <constraint firstItem="hCz-Oe-ywm" firstAttribute="top" secondItem="H7d-5K-FVe" secondAttribute="top" constant="47" id="hEH-zj-dq6"/>
+                            <constraint firstItem="H7d-5K-FVe" firstAttribute="trailing" secondItem="hCz-Oe-ywm" secondAttribute="trailing" constant="16" id="vFS-zX-hJJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H7d-5K-FVe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKu-L1-Ep9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335" y="-109"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="67l-Ct-2ew">
+            <objects>
+                <viewController id="nqp-0o-PcG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WOV-Zh-9Jj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-H1-A18">
+                                <rect key="frame" x="16" y="353" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー間でのコミュニティが作れます。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbP-eq-8V3">
+                                <rect key="frame" x="16" y="67" width="288" height="18"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jMa-Qf-HwH" firstAttribute="bottom" secondItem="UX6-H1-A18" secondAttribute="bottom" constant="89" id="J1v-T6-hMo"/>
+                            <constraint firstItem="jMa-Qf-HwH" firstAttribute="trailing" secondItem="UX6-H1-A18" secondAttribute="trailing" constant="16" id="dcj-56-zhf"/>
+                            <constraint firstItem="ZbP-eq-8V3" firstAttribute="top" secondItem="jMa-Qf-HwH" secondAttribute="top" constant="47" id="kVx-5m-xFI"/>
+                            <constraint firstItem="ZbP-eq-8V3" firstAttribute="leading" secondItem="jMa-Qf-HwH" secondAttribute="leading" constant="16" id="tbw-zd-Ox3"/>
+                            <constraint firstItem="jMa-Qf-HwH" firstAttribute="trailing" secondItem="ZbP-eq-8V3" secondAttribute="trailing" constant="16" id="uBr-1u-0kf"/>
+                            <constraint firstItem="UX6-H1-A18" firstAttribute="leading" secondItem="jMa-Qf-HwH" secondAttribute="leading" constant="16" id="ucE-mg-W41"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jMa-Qf-HwH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6a-sz-9cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="-109"/>
+        </scene>
+    </scenes>
+</document>

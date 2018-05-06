@@ -24,6 +24,10 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(VideoCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
+        
+        setMenu()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -39,6 +43,16 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return cell
     }
     
+    let menu : Menu = {
+        let mn = Menu()
+        return mn
+    }()
+    
+    private func setMenu() {
+        view.addSubview(menu)
+        view.addConstrainsWithFormat(format: "H:|[v0]|", views: menu)
+        view.addConstrainsWithFormat(format: "V:|[v0(50)]|", views: menu)
+    }
     //セルのレイアウトサイズ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.width - 16 - 16) * 9 / 16
