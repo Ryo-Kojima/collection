@@ -28,6 +28,7 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
         
         setMenu()
+        setupNav()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -41,6 +42,22 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath)
     
         return cell
+    }
+    
+    func setupNav() {
+        let searchImage = UIImage(named: "search")?.withRenderingMode(.alwaysOriginal)
+        let searchBtn = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
+        
+        let searchmore = UIBarButtonItem(image: UIImage(named: "more")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMore))
+        navigationItem.rightBarButtonItems = [searchmore, searchBtn]
+    }
+    
+    @objc func handleMore() {
+        
+    }
+    
+    @objc func handleSearch() {
+        print(123)
     }
     
     let menu : Menu = {

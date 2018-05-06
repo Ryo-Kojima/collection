@@ -87,8 +87,8 @@ class MenuCell: BaseCell {
         super.setupView()
         
         addSubview(imageView)
-        addConstrainsWithFormat(format: "H:|-22-[v0(35)]-22-|", views: imageView)
-        addConstrainsWithFormat(format: "V:|[v0(35)]|", views: imageView)
+        addConstrainsWithFormat(format: "H:|-25-[v0(28)]-25-|", views: imageView)
+        addConstrainsWithFormat(format: "V:|[v0(28)]|", views: imageView)
         
         addConstraint(NSLayoutConstraint(item:imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item:imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
