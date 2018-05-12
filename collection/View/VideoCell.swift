@@ -25,10 +25,49 @@ class BaseCell: UICollectionViewCell {
 
 class VideoCell: BaseCell {
     
+    
+    var video : Video? {
+        didSet {
+            titleLabel.text = video?.title
+            
+            VideoImageView.image = UIImage(named: (video?.VideoImageView)!)
+            
+            
+            if let profileImagename = video?.channel?.ProfileImage {
+                ProfileImage.image = UIImage(named: (profileImagename))
+                
+            }
+            
+            if let ChannelName = video?.channel?.name,let numerOfView = video?.numerOfView {
+                
+                let numberformatter = NumberFormatter()
+                numberformatter.numberStyle = .decimal
+                
+                let subtext = "\(ChannelName) * \(numberformatter.string(from: numerOfView)!) * 134"
+                subtitle.text = subtext
+            }
+            
+            if let title = video?.title {
+                let size = CGSize(width: frame.width - 16 - 44 - 8 - 16, height: 1000)
+                let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+                let rect = NSString(string:title).boundingRect(with: size,options: options,attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14)],context: nil)
+                
+                if rect.size.height > 20 {
+                    titleLabelHeightConstraint?.constant = 44
+                }
+                else {
+                    titleLabelHeightConstraint?.constant = 20
+                }
+            }
+            
+        }
+    }
+    
     //部品開発
     let titleLabel : UILabel = {
         let label = UILabel()
         label.text = "TEDxTokyo"
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -67,6 +106,8 @@ class VideoCell: BaseCell {
         return view
     }()
     
+    var titleLabelHeightConstraint : NSLayoutConstraint?
+    
     //表示
     override func setupView() {
         
@@ -79,13 +120,15 @@ class VideoCell: BaseCell {
         //autolayout
         addConstrainsWithFormat(format: "H:|-16-[v0]-16-|", views: VideoImageView)
         addConstrainsWithFormat(format: "H:|-16-[v0(44)]", views: ProfileImage)
-        addConstrainsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: VideoImageView,ProfileImage,separatorView)
+        addConstrainsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-36-[v2(1)]|", views: VideoImageView,ProfileImage,separatorView)
         addConstrainsWithFormat(format: "H:|[v0]|", views: separatorView)
         
         addConstraint(NSLayoutConstraint(item:titleLabel, attribute: .top, relatedBy: .equal, toItem: VideoImageView, attribute: .bottom, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item:titleLabel, attribute: .left, relatedBy: .equal, toItem: ProfileImage, attribute: .right, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item:titleLabel, attribute: .right, relatedBy: .equal, toItem: VideoImageView, attribute: .right, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item:titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        
+        titleLabelHeightConstraint = NSLayoutConstraint(item:titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 44)
+        addConstraint(titleLabelHeightConstraint!)
         
         addConstraint(NSLayoutConstraint(item:subtitle, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 4))
         addConstraint(NSLayoutConstraint(item:subtitle, attribute: .left, relatedBy: .equal, toItem: ProfileImage, attribute: .right, multiplier: 1, constant: 8))

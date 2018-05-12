@@ -10,6 +10,26 @@ import UIKit
 import Firebase
 class homeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var videos : [Video] = {
+        var keychannel = Channel()
+        keychannel.name = "logo"
+        keychannel.ProfileImage = "logo"
+        
+        var brankVideo = Video()
+        brankVideo.title = "TEDxTOKYO"
+        brankVideo.VideoImageView = "images"
+        brankVideo.channel = keychannel
+        brankVideo.numerOfView = 1234554326
+        
+        var brankVideo2 = Video()
+        brankVideo2.title = "TEDxNY"
+        brankVideo2.VideoImageView = "logo"
+        brankVideo2.channel = keychannel
+        brankVideo2.numerOfView = 134589347
+        
+        return [brankVideo, brankVideo2]
+    }()
+    
     //ナビとセルの構築
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +54,13 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     //セッションの数の設定
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return videos.count
     }
     
     //セルの接続
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! VideoCell
+        cell.video = videos[indexPath.item]
         return cell
     }
     
@@ -73,7 +93,7 @@ class homeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     //セルのレイアウトサイズ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width:view.frame.width,height:height + 16 + 68)
+        return CGSize(width:view.frame.width,height:height + 16 + 88)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
